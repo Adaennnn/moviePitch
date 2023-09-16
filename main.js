@@ -1,12 +1,14 @@
-import { process } from "./env"
 import { Configuration, OpenAIApi } from "openai"
+
+const OPENAI_API_KEY = window.OPENAI_API_KEY || 'default_key_for_local_development';
+
 
 const setupInputContainer = document.getElementById('setup-input-container')
 const movieBossText = document.getElementById('movie-boss-text')
 
 
 const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: OPENAI_API_KEY
 })
 
 const openai = new OpenAIApi(configuration)
